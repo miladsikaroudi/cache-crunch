@@ -23,7 +23,7 @@ void layer_norm(const std::vector<float> &input, std::vector<float> &output, flo
     }
 }
 
-void layer_norm_raw(const float *input, float *output, int size, float epsilon = 1e-5)
+void layer_norm_raw(const float *input, float *output, int size, float epsilon)
 {
     float mean = .0f;
     for (int i=0; i<size; ++i){

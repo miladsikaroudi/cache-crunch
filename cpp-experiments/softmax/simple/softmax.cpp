@@ -12,13 +12,14 @@ void softmax(const float *input, float *output, int size)
         output[i] = std::exp(input[i]-max_element);
         denom += output[i];
     }
-    for (int i=0; i<= size; ++i){
+    for (int i=0; i<size; ++i){
         output[i] /= denom;
     }
 }
 
 
 void softmax_vector(const std::vector<float>& input, std::vector<float>& output){
+    output.clear();
     float denom = .0f;
     auto max_element = *std::max_element(input.begin(), input.end());
     for(const auto& elem: input){

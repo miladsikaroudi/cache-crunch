@@ -1,3 +1,4 @@
+#include "relu.h"
 
 void relu(const std::vector<float> &input, std::vector<float>& output){
     output.clear();

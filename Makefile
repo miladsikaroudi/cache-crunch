@@ -25,9 +25,10 @@ run-test:
 		-v "$(ROOT_DIR):/app" \
 		-w /app $(IMAGE_NAME) bash -c "\
 		echo '-> Compiling...' && \
-		g++ -O1 test.cpp cpp-experiments/matrix-multiplications/transpose/matrices.cpp \
+		g++ -O1 -g -fsanitize=address,undefined test.cpp cpp-experiments/matrix-multiplications/transpose/matrices.cpp \
 		cpp-experiments/softmax/simple/softmax.cpp \
 		cpp-experiments/normalization/normalization.cpp \
+		cpp-experiments/activation/relu.cpp \
 		-o test_bin -lm && \
 		echo '-> Running tests...' && \
 		./test_bin"
